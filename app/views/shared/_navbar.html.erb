@@ -1,0 +1,27 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <h1>RPG-Engine</h1>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to('Home', root_path, class: "navbar-item") %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "button") %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path, class: "button") %>
+        <%  end %>
+      </div>
+    </div>
+  </div>
+</nav>
+

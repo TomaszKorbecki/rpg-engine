@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :universes, foreign_key: :game_master_id
+
   def game_master?
     role == GAME_MASTER
   end

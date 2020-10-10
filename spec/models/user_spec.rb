@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.build(:user, email: email, role: role) }
 
-  let(:role) { "player" }
+  let(:role) { User::PLAYER }
   let(:email) { "jon.doe@example.com" }
 
   describe "email uniqueness validation" do
@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
     end
 
     context "when user is a game master" do
-      let(:role) { "game_master" }
+      let(:role) { User::GAME_MASTER }
 
       it { expect(user.game_master?).to be_truthy }
       it { expect(user.player?).to be_falsey }

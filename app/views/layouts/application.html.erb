@@ -10,18 +10,27 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-      </li>
-    <% else %>
-      <li>
-      <%= link_to('Login', new_user_session_path) %>  
-      </li>
-    <%  end %>
-    <p><%= current_user_email(current_user) %></p>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+    <%= render partial: "shared/navbar", locals: { user: current_user } %>
+
+    <% if flash[:notice] %>
+      <div class="notification is-primary is-light">
+        <button class="delete"></button>
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-danger is-light">
+        <button class="delete"></button>
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <main class="bd-main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <%= render "shared/footer" %>
   </body>
 </html>

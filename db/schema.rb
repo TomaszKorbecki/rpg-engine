@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_155945) do
+ActiveRecord::Schema.define(version: 2020_10_10_185643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "universes", force: :cascade do |t|
+    t.bigint "game_master_id"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_master_id"], name: "index_universes_on_game_master_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
