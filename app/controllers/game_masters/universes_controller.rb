@@ -27,6 +27,12 @@ module GameMasters
       redirect_to game_masters_universes_path
     end
 
+    def destroy
+      current_universe.destroy!
+      flash[:notice] = "You deleted the #{current_universe.name} universe!"
+      redirect_to game_masters_universes_path
+    end
+
     private
 
     def current_universe

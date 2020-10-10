@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   namespace :game_masters do
-    resources :universes, only: [:index, :new, :create, :edit, :update]
+    resources :universes, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end

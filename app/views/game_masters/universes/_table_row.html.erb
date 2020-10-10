@@ -1,0 +1,7 @@
+<tr>
+  <td><%= universe.name %></td>
+  <td><%= truncate(universe.description, lenght: 128) %></td>
+  <td>
+    <%= render partial: "actions", locals: { universe: universe } %>
+  </td>
+</tr>

@@ -1,25 +1,17 @@
-<h1 class="title">Universes</h1>
-<table class="table is-hoverable">
-  <thead>
-    <tr>
-      <td>
-        Name
-      </td>
-      <td>
-        Description (truncated)
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @universes.each do |universe| %>
+<section class="section">
+  <h1 class="title">Universes</h1>
+  <table class="table is-hoverable">
+    <thead>
       <tr>
-        <td>
-          <%= universe.name %>
-        </td>
-        <td>
-          <%= truncate(universe.description) %>
-        </td>
+        <td>Name</td>
+        <td>Description (truncated)</td>
+        <td></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @universes.each do |universe| %>
+        <%= render partial: "table_row", locals: { universe: universe } %>
+      <% end %>
+    </tbody>
+  </table>
+</section>
