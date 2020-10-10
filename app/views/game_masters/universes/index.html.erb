@@ -1,17 +1,17 @@
 <section class="section">
-  <h1 class="title">Universes</h1>
-  <table class="table is-hoverable">
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Description (truncated)</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @universes.each do |universe| %>
-        <%= render partial: "table_row", locals: { universe: universe } %>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="level">
+    <div class="level-left">
+      <h1 class="title">Universes</h1>
+    </div>
+    <div class="level-right">
+      <%= link_to('Add a new Universe!', new_game_masters_universe_path, class: "button is-large") %>
+    </div>
+  </div>
+  <div class="columns is-mobile is-multiline">
+    <% @universes.each do |universe| %>
+      <div class="column is-one-third">
+        <%= render partial: "card", locals: { universe: universe } %>
+      </div>
+    <% end %>
+  </div>
 </section>
