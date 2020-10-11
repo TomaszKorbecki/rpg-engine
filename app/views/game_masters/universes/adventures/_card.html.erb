@@ -17,6 +17,8 @@
         <p>
           <%= adventure.description.truncate(128) %>
         </p>
+
+        <%= render partial: "game_masters/universes/adventures/actions", locals: { universe: universe, adventure: adventure } %>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :game_masters do
     resources :universes do
-      resources :adventures, module: "universes"
+      resources :adventures, module: "universes", only: [:new, :create, :edit, :update, :destroy]
     end
   end
 end

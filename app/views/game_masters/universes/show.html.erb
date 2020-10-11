@@ -21,7 +21,7 @@
       </div>
       <% @recent_adventures.each do |adventure| %>
         <div class="content">
-          <%= render partial: "game_masters/universes/adventures/card", locals: { adventure: adventure } %>
+          <%= render partial: "game_masters/universes/adventures/card", locals: { universe: @universe, adventure: adventure } %>
         </div>
       <% end %>
     </div>
