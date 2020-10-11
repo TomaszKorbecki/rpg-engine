@@ -1,0 +1,25 @@
+<a href=<%= game_masters_universe_path(universe) %>>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <p class="title is-4"><%= universe.name.truncate(23) %></p>
+        </div>
+        <div class="media-content">
+        </div>
+      </div>
+
+      <div class="content">
+        <p>
+          <%= universe.description.truncate(128) %>
+        </p>
+        <time datetime=<%= universe.created_at.to_s(:db) %>><%= universe.created_at.to_s(:long_ordinal) %></time>
+      </div>
+    </div>
+  </div>
+</a>
