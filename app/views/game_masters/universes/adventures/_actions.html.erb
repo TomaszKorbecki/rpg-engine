@@ -1,0 +1,4 @@
+<div class="field is-grouped">
+  <%= link_to('Edit', edit_game_masters_universe_adventure_path(universe_id: universe.id, id: adventure.id), class: "button is-small is-light") %>
+  <%= link_to('Remove', game_masters_universe_adventure_path(universe_id: universe.id, id: adventure.id), method: :delete, class: "button is-small is-danger is-light") %>
+</div>

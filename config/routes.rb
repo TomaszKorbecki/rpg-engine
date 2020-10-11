@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   namespace :game_masters do
-    resources :universes, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :universes do
+      resources :adventures, module: "universes", only: [:new, :create, :edit, :update, :destroy]
+    end
   end
 end

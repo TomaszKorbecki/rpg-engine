@@ -4,6 +4,11 @@ module GameMasters
       @universes = current_game_master.universes
     end
 
+    def show
+      @universe = current_universe
+      @recent_adventures = current_universe.recent_adventures
+    end
+
     def new
       @universe = Universe.new(game_master: current_game_master)
     end
