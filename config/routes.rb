@@ -8,4 +8,8 @@ Rails.application.routes.draw do
       resources :adventures, module: "universes", only: [:new, :create, :edit, :update, :destroy]
     end
   end
+
+  namespace :players do
+    resources :universes, only: [:index]
+  end
 end

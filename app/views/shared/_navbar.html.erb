@@ -10,7 +10,12 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <%= link_to('Home', root_path, class: "navbar-item") %>
+      <div class="navbar-item">
+        <%= link_to('Home', root_path, class: "navbar-item") %>
+      </div>
+      <div class="navbar-item">
+        <%= link_to('Universes', players_universes_path, class: "navbar-item") %>
+      </div>
     </div>
 
     <div class="navbar-end">
