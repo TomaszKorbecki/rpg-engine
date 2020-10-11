@@ -1,29 +1,40 @@
-<section class="section">
-  <div class="level">
-    <div class="level-left">
-      <h1 class="title"><%= @universe.name %></h1>
-    </div>
-    <div class="level-right">
-    </div>
-  </div>
-  <div class="columns is-mobile is-multiline">
-    <div class="column is-half">
-      <%= @universe.description %>
-    </div>
-    <div class="column is-half">
-      <div class="level">
-        <div class="level-left">
-          <h1 class="bd-anchor-name">Adventures</h1>
-        </div>
-        <div class="level-right">
-          <%= link_to('Add a new Adventure!', new_game_masters_universe_adventure_path(@universe), class: "button") %>
-        </div>
-      </div>
-      <% @recent_adventures.each do |adventure| %>
-        <div class="content">
-          <%= render partial: "game_masters/universes/adventures/card", locals: { universe: @universe, adventure: adventure } %>
-        </div>
-      <% end %>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @universe.name %>
+      </h1>
     </div>
   </div>
 </section>
+<div class="container">
+  <section class="section">
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-half">
+        <div class="level">
+          <div class="level-left">
+            <h1 class="is-size-4">Description</h1>
+          </div>
+        </div>
+        <div class="content">
+          <%= @universe.description %>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="level">
+          <div class="level-left">
+            <h1 class="is-size-4">Adventures</h1>
+          </div>
+          <div class="level-right">
+            <%= link_to('Add a new Adventure!', new_game_masters_universe_adventure_path(@universe), class: "button") %>
+          </div>
+        </div>
+        <% @recent_adventures.each do |adventure| %>
+          <div class="content">
+            <%= render partial: "game_masters/universes/adventures/card", locals: { universe: @universe, adventure: adventure } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

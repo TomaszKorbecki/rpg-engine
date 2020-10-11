@@ -11,7 +11,11 @@
 
   <body>
 
-    <%= render partial: "shared/navbar", locals: { user: current_user } %>
+    <% if current_user_game_master?(current_user) %>
+      <%= render partial: "shared/game_master_navbar", locals: { user: current_user } %>
+    <% else %>
+      <%= render partial: "shared/navbar", locals: { user: current_user } %>
+    <% end %>
 
     <% if flash[:notice] %>
       <div class="notification is-primary is-light">
@@ -27,9 +31,7 @@
     <% end %>
 
     <main class="bd-main">
-      <div class="container">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </main>
     <%= render "shared/footer" %>
   </body>
