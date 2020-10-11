@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   namespace :game_masters do
-    resources :universes
+    resources :universes do
+      resources :adventures, module: "universes"
+    end
   end
 end

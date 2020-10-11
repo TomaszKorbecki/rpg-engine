@@ -6,6 +6,7 @@ module GameMasters
 
     def show
       @universe = current_universe
+      @recent_adventures = current_universe.recent_adventures
     end
 
     def new

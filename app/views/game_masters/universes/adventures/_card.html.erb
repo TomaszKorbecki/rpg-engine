@@ -1,0 +1,23 @@
+<a href=<%= "#" %>>
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title">
+        <%= adventure.name.truncate(23) %>
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+        </div>
+        <div class="media-content">
+        </div>
+      </div>
+
+      <div class="content">
+        <p>
+          <%= adventure.description.truncate(128) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
